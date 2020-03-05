@@ -6,13 +6,25 @@ import { AppComponent } from './app.component';
 import { DiretiveNgIfComponent } from './diretive-ng-if/diretive-ng-if.component';
 import { DiretivaAtributoComponent } from './diretiva-atributo/diretiva-atributo.component';
 import { DiretivaNgStyleComponent } from './diretiva-ng-style/diretiva-ng-style.component';
+import { ElvisComponent } from './elvis/elvis.component';
+import { DiretivaNgContentComponent } from './diretiva-ng-content/diretiva-ng-content.component';
+import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
+import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretivas-customizadas.component';
+import { HighlightMouseDirective } from './shared/highlight-mouse.directive';
+import { HightlightDirective } from './shared/hightlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DiretiveNgIfComponent,
     DiretivaAtributoComponent,
-    DiretivaNgStyleComponent
+    DiretivaNgStyleComponent,
+    ElvisComponent,
+    DiretivaNgContentComponent,
+    FundoAmareloDirective,
+    DiretivasCustomizadasComponent,
+    HighlightMouseDirective,
+    HightlightDirective
   ],
   imports: [
   
