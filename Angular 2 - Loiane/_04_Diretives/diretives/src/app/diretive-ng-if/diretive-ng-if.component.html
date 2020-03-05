@@ -1,0 +1,70 @@
+<h1>Diretivas</h1>
+
+<!-- <h5>*ngIf </h5>
+
+<div *ngIf="cursos.length > 0">
+
+    Lista de cursos aqui!
+
+</div>
+
+<div *ngIf="cursos.length == 0">
+    Não existem itens para serem listados.
+</div>
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos aqui!
+</div>
+
+<div *ngIf="!mostrarCursos">
+    Não existem itens para serem listados.
+</div>
+
+<br>
+
+<br>
+
+<button (click)="onMostrarCursos()"> Mostrar ou esconder cursos!</button>
+
+<br>
+
+<h5>Hidden como alteranativa</h5>
+
+<div [hidden]="!mostrarCursos">
+    Lista de cursos aqui!
+</div>
+
+<div [hidden]="mostrarCursos">
+    Não existem itens para serem listados.
+</div>
+<br>
+
+<br>
+
+<h5>*ngSwitch ou *ngSwitchCase</h5>
+<br>
+
+<br> -->
+<!-- <nav class="navbar navbar-dark bg-primary">
+    <div class="nav navbar-nav">
+        <a class="nav-item nav-link" [class.active]="aba == 'home'" (click)="aba = 'home'">Home</a>
+        <a class="nav-item nav-link" [class.active]="aba == 'feat'" (click)="aba = 'feat'">Features</a>
+        <a class="nav-item nav-link" [class.active]="aba == 'pric'" (click)="aba = 'pric'">Pricing</a>
+    </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+
+     
+    <p *ngSwitchCase="'feat'">Modo features ativado</p>
+    <p *ngSwitchCase="'pric'">Modo pricing ativado</p>
+    <p *ngSwitchDefault>HOME</p>
+</div> -->
+
+<h5>*ngFor</h5>
+
+<ul>
+    <li *ngFor="let curso of cursos, let i = index">
+        {{i + 1}} {{curso}}
+    </li>
+</ul>

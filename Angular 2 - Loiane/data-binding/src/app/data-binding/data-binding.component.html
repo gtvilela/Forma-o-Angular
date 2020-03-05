@@ -56,7 +56,7 @@
 
 </section> -->
 
-<section class="event-binding">
+<!-- <section class="event-binding">
 
 
     <article>
@@ -69,10 +69,51 @@
 
         <br><br>
 
-        <input type="text" (keyup)="onKeyUp($event)" />
+        <input type="text" (keyup)="onKeyUp($event)" (keyUp.enter)="salvarValor(campoInput.value)" (blur)="salvarValor(campoInput.value)" #campoInput />
 
-        <p>Valor atual: {{vlrAtual }}</p>
+        <p>Valor atual: {{ vlrAtual }}</p>
+        <p>Valor salvo: {{ vlrSalvo }}</p>
+
+        <br><br>
+
+        <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Passe o mause sobre mim</span>
 
     </article>
+
+</section> -->
+
+<!-- <section class="two-way-binding">
+
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <!--Associação de propriedde e evento-->
+
+
+<!-- <input type="text" [(ngModel)]="nome" />
+
+            <p>Você digitou: {{nome}}</p>
+        </div>
+
+        <div>
+            <input type="text" [(ngModel)]="pessoa.nome" />
+            <input type="text" [(ngModel)]="pessoa.idade" />
+
+            <p>Meu nome é {{ pessoa.nome }} e minha idade é {{ pessoa.idade }}.</p>
+        </div>
+
+    </article>
+
+</section> -->
+
+<section class="input-output-properties">
+
+    <article>
+
+        <h3>Input/Output Properties</h3>
+        <app-curso [nome]="nomeDoCurso"></app-curso>
+        <contador [valor]="vlrInicial" (mudouValor)="onMudouValor($event)"></contador>
+    </article>
+
 
 </section>

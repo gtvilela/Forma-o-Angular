@@ -1,0 +1,19 @@
+<p>diretiva-atributo works!</p>
+
+
+<h1>
+
+    <i class="glyphicon" [class.glyphicon-star-empty]="!meuFavorito" [class.glyphicon-star]="meuFavorito" (click)="onCick()"></i>
+
+</h1>
+
+<br>
+
+<h1>
+
+    <i class="glyphicon" [ngClass]="{
+        'glyphicon-star-empty' : !meuFavorito,
+        'glyphicon-star' : meuFavorito
+    }" (click)="onCick()"></i>
+
+</h1>
