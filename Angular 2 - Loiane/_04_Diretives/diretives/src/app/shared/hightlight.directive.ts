@@ -1,18 +1,17 @@
-
-
-import { Directive, HostListener, HostBinding, Input } from '@angular/core';
+import { Directive, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[appHightlight]'
 })
-export class HighlightDirective {
+export class HightlightDirective {
 
+ 
   @HostListener('mouseenter') onMouseOver() {
-      this.backgroundColor = this.highlightColor
-  }
+    this.backgroundColor = this.highlightColor
+}
 
-  @HostListener('mouseleave') onMouseLeave() {
-    this.backgroundColor = this.defaultColor
+@HostListener('mouseleave') onMouseLeave() {
+  this.backgroundColor = this.defaultColor
 }
 
 @HostBinding('style.backgroundColor') get setColor() { return this.backgroundColor 
@@ -20,10 +19,14 @@ export class HighlightDirective {
 
 
 @Input() defaultColor: string = 'white'
-@Input() highlightColor: string = 'yellow'
+@Input('highlight') highlightColor: string = 'yellow'
 
 private backgroundColor: string
 
-  constructor() { }
+constructor() { }
+
+ngOnInit() {
+  this.backgroundColor = this.defaultColor;
+}
 
 }

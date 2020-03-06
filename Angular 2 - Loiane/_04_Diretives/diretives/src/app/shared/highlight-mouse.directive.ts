@@ -1,30 +1,30 @@
-import { Directive, HostBinding, HostListener } from '@angular/core';
+import { Directive, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
-  selector: '[appHightlightMouse]'
+  selector: '[appHighlightMouse]'
 })
-export class HightlightMouseDirective {
+export class HighlightMouseDirective {
 
   @HostListener('mouseenter') onMouseOver() {
     // this._renderer.setStyle(this._elementRef.nativeElement, 'background-color', 'yellow')
     this.backgroundColor = 'yellow'
-}
-
-@HostListener('mouseleave') onMouseLeave() {
+  }
+  
+  @HostListener('mouseleave') onMouseLeave() {
   // this._renderer.setStyle(this._elementRef.nativeElement, 'background-color', 'white')
   this.backgroundColor = 'white'
+  }
+  
+  // @HostBinding('style.backgroundColor') backgroundColor: string
+  
+  @HostBinding('style.backgroundColor') get setColor() { return this.backgroundColor 
+  }
+  
+  private backgroundColor: string
+  
+  constructor() { }
+  
 }
 
-// @HostBinding('style.backgroundColor') backgroundColor: string
 
-@HostBinding('style.backgroundColor') get setColor() { return this.backgroundColor 
-}
-
-private backgroundColor: string
-
-constructor() { }
-
-
-
-}
 
