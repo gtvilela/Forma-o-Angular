@@ -22,4 +22,9 @@ export class CursosComponent implements OnInit {
 
   }
 
+  onAddCurso(curso: string) {
+      this.cursosService.addCurso(curso);
+      this.cursosService.emitirCursoCriado.emit(curso)
+  }
+
 }
