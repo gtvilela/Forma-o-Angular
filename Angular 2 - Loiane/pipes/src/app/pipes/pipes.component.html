@@ -1,0 +1,10 @@
+<p>pipes works!</p>
+
+<h5>Criando pipes</h5>
+<p>Título livro: {{livro.titulo | uppercase}}</p>
+<p>Nota: {{livro.rating | number:'1.1-2' }}</p>
+<p>Preço: {{livro.preco | currency:'BRL' }}</p>
+<p>Páginas: {{livro.numeroPaginas | number }}</p>
+<p>Data de Lançamento: {{livro.dataLancamento | date:'dd/MM/yyyy'}}</p>
+<p>Link: {{livro.url}}></p>
+<p>Livro: {{livro | json}}</p>
