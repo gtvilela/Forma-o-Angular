@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { CursoService } from './curso.service';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-cursos',
@@ -7,9 +12,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+  cursos: any[]
+  pagina: number
+  inscricao: Subscription
 
-  ngOnInit(): void {
+  constructor(private cursoService: CursoService,
+              private route: ActivatedRoute,
+              private router: Router) { }
+
+  ngOnInit() {
+
+    this.cursos = this.cursoService.getCursos()
+
+    this.inscricao =  this.route.queryParams.subscribe(
+      (queryParams: any) => {
+          this.pagina = queryParams['pagina']
+      })
+
+  }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe()
+  }
+
+  proximaPagina() {
+
+    this.router.navigate(['/cursos'], {
+      queryParams: {'pagina': ++this.pagina}})
   }
 
 }

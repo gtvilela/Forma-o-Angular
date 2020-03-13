@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<nav>
+    <div class="nav-wrapper amber">
+      <a routerLink="" routerLink="" class="brand-logo right black-text">
+        <i class="medium material-icons">router</i> Logo
+      </a>
+     
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li routerLinkActive="active"><a class="black-text" routerLink="/cursos" [queryParams]="{pagina:1}">Cursos</a></li>
+       <li routerLinkActive="active"><a class="black-text" routerLink="/login">Login</a></li>
+       <li routerLinkActive="active"><a class="black-text" routerLink="/alunos">Alunos</a></li>
+        <li routerLinkActive="active"><a class="black-text" [routerLink]="['curso', idCurso.value]">Cursos com id</a></li>
+      </ul>
+    
+    </div>
+  </nav>
+  
+
+<div class="container">
+  
+  <p>Entre com o id do curso</p>
+  <input #idCurso>
+  <router-outlet></router-outlet>
+
+</div>
